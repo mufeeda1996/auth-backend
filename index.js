@@ -8,7 +8,7 @@ const app = express();
 
 // Configure CORS to allow your frontend
 const corsOptions = {
-    origin: ['https://react-task-7yyb.vercel.app', 'http://localhost:3000'],
+    origin: ['https://react-task-wjne.vercel.app/', 'http://localhost:3000'],
     credentials: true,
   };
   
