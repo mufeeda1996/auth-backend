@@ -6,15 +6,15 @@ const authRoutes = require('./Src/routes/auth');
 
 const app = express();
 
-// Configure CORS to allow your frontend
-const corsOptions = {
-  origin: [
-    'https://react-task-wjne.vercel.app', // your frontend URL
-    'http://localhost:3000', // local dev
-  ],
-  credentials: true,
-};
-
+app.use(cors({
+    origin: [
+      'http://localhost:5173',      // Local React (Vite)
+      'https://react-task-wjne.vercel.app'  // ✅ Your REAL Vercel link
+    ],
+    methods: ['GET', 'POST'],
+    credentials: true
+  }));
+  
 app.use(cors(corsOptions));
 
 // Body parser
