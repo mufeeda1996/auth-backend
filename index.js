@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://react-task-wjne.vercel.app'
+    'https://react-task-eta-two.vercel.app/'
   ],
   methods: ['GET', 'POST'],
   credentials: true
