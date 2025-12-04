@@ -1,17 +1,20 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors'); // <-- only once
 const authRoutes = require('./Src/routes/auth');
 
 const app = express();
 
 // Configure CORS to allow your frontend
 const corsOptions = {
-    origin: ['https://react-task-wjne.vercel.app/', 'http://localhost:3000'],
-    credentials: true,
-  };
-  
+  origin: [
+    'https://react-task-wjne.vercel.app', // your frontend URL
+    'http://localhost:3000', // local dev
+  ],
+  credentials: true,
+};
+
 app.use(cors(corsOptions));
 
 // Body parser
