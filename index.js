@@ -8,9 +8,10 @@ const app = express();
 
 // Configure CORS to allow your frontend
 const corsOptions = {
-  origin: 'https://react-task-7yyb.vercel.app', // Vercel frontend URL
-  credentials: true, // allow cookies if needed
-};
+    origin: ['https://react-task-7yyb.vercel.app', 'http://localhost:3000'],
+    credentials: true,
+  };
+  
 app.use(cors(corsOptions));
 
 // Body parser
