@@ -5,17 +5,27 @@ const cors = require('cors');
 const authRoutes = require('./Src/routes/auth');
 
 const app = express();
-app.use(cors());
+
+// Configure CORS to allow your frontend
+const corsOptions = {
+  origin: 'https://react-task-7yyb.vercel.app', // Vercel frontend URL
+  credentials: true, // allow cookies if needed
+};
+app.use(cors(corsOptions));
+
+// Body parser
 app.use(express.json());
 
+// Routes
 app.use('/api/auth', authRoutes);
 
+// Port
 const PORT = process.env.PORT || 5000;
 
-// Connect to MongoDB (Mongoose 7+)
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
-  .catch(err => console.error(err));
+  .catch(err => console.error('MongoDB connection error:', err));
