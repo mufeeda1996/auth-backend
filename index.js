@@ -7,16 +7,10 @@ const authRoutes = require('./Src/routes/auth');
 const app = express();
 
 // Configure CORS to allow your frontend
-const cors = require('cors');
-
 const corsOptions = {
-  origin: [
-    'http://localhost:5173', // for local dev
-    'https://react-task-wjne-8ov583l4d-mufeeda1996s-projects.vercel.app', // your frontend Vercel URL
-  ],
-  credentials: true, // if your backend uses cookies
-};
-
+    origin: ['https://react-task-7yyb.vercel.app', 'http://localhost:3000'],
+    credentials: true,
+  };
   
 app.use(cors(corsOptions));
 
