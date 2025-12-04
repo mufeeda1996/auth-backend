@@ -7,14 +7,14 @@ const authRoutes = require('./Src/routes/auth');
 const app = express();
 
 // ✅ CORRECT CORS (ONLY ONCE)
-// app.use(cors({
-//   origin: [
-//     'http://localhost:5173',
-//     'https://react-task-wjne.vercel.app'
-//   ],
-//   methods: ['GET', 'POST'],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://react-task-wjne.vercel.app'
+  ],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 
 app.use(cors())
 
